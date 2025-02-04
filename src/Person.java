@@ -122,9 +122,9 @@ public class Person {
         char DQ = '\u0022';  // Assign the double quote char to a variable
         retString = "{" + DQ + "IDNum" + DQ + ":" + DQ + this.IDNum + DQ + ",";
         retString += DQ + "firstName" + DQ + ":" + DQ + this.firstName + DQ + ",";
-        retString += " " + DQ + "lastName" + DQ + ":" + DQ + this.lastName + DQ + ",";
-        retString += " " + DQ + "title" + DQ + ":" + DQ + this.title + DQ + ",";
-        retString += " " + DQ + "YOB" + DQ + ":" + this.YOB + "}";
+        retString += DQ + "lastName" + DQ + ":" + DQ + this.lastName + DQ + ",";
+        retString += DQ + "title" + DQ + ":" + DQ + this.title + DQ + ",";
+        retString += DQ + "YOB" + DQ + ":" + this.YOB + "}";
 
         return retString;
     }

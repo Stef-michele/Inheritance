@@ -1,8 +1,8 @@
 public class Worker extends Person {
     private double hourlyPayRate;
 
-    public Worker(String firstName, String lastName, String ID, String title, int YOB, double hourlyPayRate) {
-        super(firstName, lastName, ID, title, YOB);
+    public Worker(String ID, String firstName, String lastName, String title, int YOB, double hourlyPayRate) {
+        super(ID, firstName, lastName, title, YOB);
         this.hourlyPayRate = hourlyPayRate;
     }
 
@@ -31,12 +31,15 @@ public class Worker extends Person {
 
     @Override
     public String toXMLRecord() {
-        return "<Worker>" + super.toXMLRecord() + "<HourlyPayRate>" + hourlyPayRate + "</HourlyPayRate></Worker>";
+        return "<Worker>" + super.toXMLRecord() + "<hourlyPayRate>" + hourlyPayRate + "</hourlyPayRate></Worker>";
     }
 
     @Override
     public String toJSONRecord() {
-        return "{" + super.toJSONRecord() + ", \"hourlyPayRate\": " + hourlyPayRate + "}";
+        String baseJson = super.toJSONRecord();
+        // Remove the final closing brace to append additional data
+        baseJson = baseJson.substring(0, baseJson.length() - 1);
+        return baseJson + ",\"hourlyPayRate\":" + hourlyPayRate + "}";
     }
 }
 

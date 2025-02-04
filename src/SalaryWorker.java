@@ -28,12 +28,14 @@ public class SalaryWorker extends Worker {
     // Overriding toXMLRecord
     @Override
     public String toXMLRecord() {
-        return "<SalaryWorker>" + super.toXMLRecord() + "<annualSalary>" + annualSalary + "</annualSalary></SalaryWorker>";
+        return "<SalaryWorker>" + super.toXMLRecord() + "<annualSalary>" + annualSalary + "</annualSalary>" + "</SalaryWorker>";
     }
 
     // Overriding toJSONRecord
     @Override
     public String toJSONRecord() {
-        return "{" + super.toJSONRecord().replace("}", "") + ", \"annualSalary\": " + annualSalary + "}";
-    }
+        String baseJson = super.toJSONRecord();
+        // Remove the final closing brace to append additional data
+        baseJson = baseJson.substring(0, baseJson.length() - 1);
+        return baseJson + ",\"annualSalary\":"+annualSalary+"}";    }
 }

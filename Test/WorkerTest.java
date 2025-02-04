@@ -48,7 +48,7 @@ class WorkerTest {
 
     @Test
     void toJSONRecord() {
-        String expectedJSON = "{\"IDNum\":\"00001234\",\"firstName\":\"Jane\",\"lastName\":\"Doe\",\"title\":\"Ms.\",\"YOB\":1990, \"hourlyPayRate\": 20.0}";
+        String expectedJSON = "{\"IDNum\":\"00001234\",\"firstName\":\"Jane\",\"lastName\":\"Doe\",\"title\":\"Ms.\",\"YOB\":1990,\"hourlyPayRate\":20.0}";
         assertEquals(expectedJSON, worker.toJSONRecord());
     }
 }

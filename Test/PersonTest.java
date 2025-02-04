@@ -42,12 +42,12 @@ class PersonTest {
 
     @Test
     void toCSVRecord() {
-        assertEquals("00000A, Bob,Tester1,Mr.,1955", p1.toCSVRecord());
+        assertEquals("00000A,Bob,Tester1,Mr.,1955", p1.toCSVRecord());
     }
 
     @Test
     void toJSONRecord() {
-        String expected = "{\"IDNum\":\"00000A\",\"firstName\":\"Bob\", \"lastName\":\"Tester1\", \"title\":\"Mr.\", \"YOB\":1955}";
+        String expected = "{\"IDNum\":\"00000A\",\"firstName\":\"Bob\",\"lastName\":\"Tester1\",\"title\":\"Mr.\",\"YOB\":1955}";
         assertEquals(expected, p1.toJSONRecord());
     }
 
